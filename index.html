@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html>
+  <head>
+    <title>Ai là người xinh nhất</title>
+
+	<header>
+		<h2 id="text3">Ai là người Xinh Nhất ?</h2>		
+	
+    <style>
+		h2 {
+  text-align: center;
+}
+
+		body {
+  background-color: #ADD8E6;
+}
+      body {
+		
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .image-container img {
+        margin: 10px;
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      .selected {
+        border: 2px solid red;
+      }
+	  audio {
+    display: none;
+  }
+  @media only screen and (max-width: 600px) {
+    .image-container {
+      flex-direction: column;
+    }
+    
+    .image-container img {
+      margin: 10px auto;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+    </style>
+  </head>
+  <body>
+	<audio  controls autoplay preload="auto">
+		<source src="image/SuytNuaThi.mp3" type="audio/mpeg">
+	</audio>
+	  
+    <div class="image-container">
+      <img src="image/1.jpg" alt="Hình ảnh thứ nhất">
+      <img src="image/2.jpg" alt="Hình ảnh thứ hai">
+      <img id="third-image" src="image/3.jpg" alt="Hình ảnh thứ ba">
+      <img src="image/4.jpg" alt="Hình ảnh thứ tư">
+      <img src="image/5.jpg" alt="Hình ảnh thứ năm">
+      <img src="image/6.jpg" alt="Hình ảnh thứ sáu">
+    </div>
+
+    <script>
+      // Lưu trữ đường dẫn hình ảnh được chọn
+      let selectedImagePath = null;
+
+      // Lưu trữ đối tượng hình ảnh được chọn
+      let selectedImage = null;
+
+      // Xử lý sự kiện click cho các hình ảnh
+      const images = document.querySelectorAll(".image-container img");
+      images.forEach((image) => {
+        if (image.id === "third-image") {
+          image.addEventListener("click", () => {
+            if (selectedImage) {
+              selectedImage.classList.remove("selected");
+            }
+
+            image.classList.add("selected");
+
+            if (selectedImagePath) {
+              if (image.getAttribute("src") !== selectedImagePath) {
+                alert("Chọn sai rồi, xin mời chọn lại");
+              }
+			  else
+			  {
+				window.location.href = "https://www.youtube.com/watch?v=pAm1a5mrO8o&ab_channel=%C4%90%C3%ACnhTr%E1%BB%8DngOfficial";
+			  }
+            }
+
+            selectedImage = image;
+            selectedImagePath = image.getAttribute("src");
+          });
+        } else {
+          image.addEventListener("click", () => {
+            alert("Mắt mũi để để đâu thế, chọn lại đi");
+          });
+        }
+      });
+    </script>
+  </body>
+
+</html>
