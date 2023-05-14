@@ -74,8 +74,10 @@
       <img src="image/5.jpg" alt="Hình ảnh thứ năm">
       <img src="image/6.jpg" alt="Hình ảnh thứ sáu">
     </div>
-
     <script>
+      document.addEventListener("click", function() {
+  document.querySelector("audio").play();
+});
       // Lưu trữ đường dẫn hình ảnh được chọn
       let selectedImagePath = null;
 
@@ -95,10 +97,12 @@
 
             if (selectedImagePath) {
               if (image.getAttribute("src") !== selectedImagePath) {
-                alert("Chọn sai rồi, xin mời chọn lại");
+                alert("Cô này xấu thế , chọn lại đi");
+                
               }
 			  else
 			  {
+          alert("Em là đẹp nhất ");
 				window.location.href = "https://www.youtube.com/watch?v=pAm1a5mrO8o&ab_channel=%C4%90%C3%ACnhTr%E1%BB%8DngOfficial";
 			  }
             }
